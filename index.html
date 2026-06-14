@@ -8,12 +8,12 @@
 <style>
 :root {
   /* Corverxis exact brand colors extracted from logo */
-  --navy-deep:   #06101e;
-  --navy-base:   #091827;
-  --navy-mid:    #0d2038;
-  --navy-light:  #112845;
-  --navy-card:   #0f2236;
-  --navy-hover:  #142c4a;
+  --navy-deep:   #0b1f3a;
+  --navy-base:   #0e2444;
+  --navy-mid:    #112a4e;
+  --navy-light:  #163158;
+  --navy-card:   #102848;
+  --navy-hover:  #1a3560;
   --ocean:       #00c2e0;
   --ocean-l:     #33cfea;
   --ocean-ll:    #7de3f4;
@@ -26,7 +26,7 @@
   --text:        #e2f4f9;
   --text2:       #6fa8bf;
   --text3:       #335f75;
-  --green:       #1de9b6;
+  --green:       #00c2e0;
   --amber:       #f5a623;
   --mono:        "JetBrains Mono", monospace;
   --sans:        "Inter", sans-serif;
@@ -47,8 +47,8 @@ body::before {
   content: "";
   position: fixed; inset: 0;
   background-image:
-    linear-gradient(rgba(0,194,224,0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,194,224,0.032) 1px, transparent 1px);
+    linear-gradient(rgba(0,194,224,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,194,224,0.055) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none; z-index: 0;
 }
@@ -77,10 +77,10 @@ body::before {
   display: flex; align-items: center; gap: 22px;
   font-size: 11px; font-family: var(--mono);
 }
-.status-live { display: flex; align-items: center; gap: 6px; color: var(--green); }
+.status-live { display: flex; align-items: center; gap: 6px; color: var(--ocean-l); }
 .status-dot  {
   width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 8px var(--green);
+  background: var(--ocean); box-shadow: 0 0 8px var(--ocean);
   animation: pulse 2.2s ease-in-out infinite;
 }
 @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
@@ -255,7 +255,7 @@ body::before {
 .output-badges { display: flex; gap: 5px; }
 .badge { font-size: 9px; font-family: var(--mono); padding: 2px 7px; border-radius: 3px; border: 1px solid; }
 .badge-ocean { background: rgba(0,194,224,0.12); color: var(--ocean-l); border-color: rgba(0,194,224,0.28); }
-.badge-green { background: rgba(29,233,182,0.10); color: #6ef5d8; border-color: rgba(29,233,182,0.24); }
+.badge-green { background: rgba(0,194,224,0.12); color: var(--ocean-l); border-color: rgba(0,194,224,0.28); }
 .badge-amber { background: rgba(245,166,35,0.10); color: #fcd34d; border-color: rgba(245,166,35,0.24); }
 
 .output-body {
@@ -321,7 +321,7 @@ button:focus-visible { outline: 2px solid var(--ocean); outline-offset: 2px; }
     </div>
     <div class="header-right">
       <div class="status-live"><div class="status-dot"></div><span>Systems online</span></div>
-      <span class="hdr-stat">Models: <span>52 domain experts</span></span>
+      <span class="hdr-stat">Models: <span>58 domain experts</span></span>
       <span class="hdr-stat">Engine: <span>Physics &middot; CAD &middot; EDA &middot; BIO</span></span>
     </div>
   </div>
@@ -329,7 +329,7 @@ button:focus-visible { outline: 2px solid var(--ocean); outline-offset: 2px; }
 
 <div class="subheader">
   <div class="sh-item">Engine: <span>Physics + Simulation + Standards DB</span></div>
-  <div class="sh-item">Verticals: <span>13 loaded</span></div>
+  <div class="sh-item">Verticals: <span>14 loaded</span></div>
   <div class="sh-item">Context: <span>2M tokens</span></div>
   <div class="sh-item">Platform: <span>Corverxis SuperModel v1.0</span></div>
 </div>
@@ -350,6 +350,7 @@ button:focus-visible { outline: 2px solid var(--ocean); outline-offset: 2px; }
     <button class="nav-btn" onclick="sel(this,'energy')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3"/><circle cx="12" cy="12" r="4"/><path d="M18.4 5.6l-.7.7M6.3 17.7l-.7.7M18.4 18.4l-.7-.7M6.3 6.3l-.7-.7"/></svg>Renewable Energy</button>
     <button class="nav-btn" onclick="sel(this,'def')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 9-8 10C7.5 21 4 17 4 12V7l8-4z"/></svg>Defense Systems</button>
     <button class="nav-btn" onclick="sel(this,'software')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Software Engineering</button>
+    <button class="nav-btn" onclick="sel(this,'graphic')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10"/><path d="M12 8v1m0 6v1M8 12h1m6 0h1"/><path d="M19 5l-1.5 1.5M17.5 3.5L19 5"/></svg>Graphic Design</button>
   </nav>
 
   <main class="main">
@@ -412,6 +413,7 @@ health:{title:"Healthcare Device Engineering",badge:"MedTech",desc:"FDA/MDR-comp
 mat:{title:"Materials Science",badge:"Materials",desc:"Material selection, composites design, failure analysis, coatings, additive manufacturing, and computational materials",caps:[{n:"Material selection",d:"Ashby charts, CES-style reasoning, trade-space optimization"},{n:"Composites design",d:"Classical laminate theory, fiber orientation, damage tolerance"},{n:"Failure analysis",d:"Fatigue, fracture mechanics, Paris law, SEM interpretation"},{n:"Surface engineering",d:"Coatings, anodizing, PVD/CVD selection and specification"},{n:"Additive manufacturing",d:"Design for AM, support strategies, post-process heat treat"},{n:"Computational",d:"DFT, molecular dynamics, CALPHAD phase diagram prediction"}],ex:["Select material for a 200C rotating shaft with fatigue limit >500MPa","Design a CFRP pressure vessel laminate for 350 bar service at 80C","Analyze fatigue crack growth in 7075-T6 using Paris law parameters"],m:["9","27","11k","2"],resp:"CORVERXIS SUPERMODEL - MATERIALS SCIENCE ANALYSIS\n\nMaterial selection and fracture mechanics synthesis...\nReferencing ASTM E647, AMS 5662, Mil-HDBK-5J...\n\n-- MATERIAL SELECTION (200C ROTATING SHAFT) --\nRequirements: UTS >1000MPa / Fatigue >500MPa / 200C service\n\n  Rank 1: Inconel 718 (AMS 5662) << RECOMMENDED\n    UTS 1380MPa / Fatigue limit 620MPa at 200C\n    Density 8.19 g/cc / Excellent oxidation resistance\n    Cost: HIGH but justified for continuous 200C service\n\n  Rank 2: 17-4 PH Stainless (H900)\n    UTS 1310MPa / Fatigue limit 517MPa at 200C\n    Density 7.78 g/cc / Medium cost\n    Risk: SCC susceptibility in chloride environments\n\n  Rank 3: Ti-6Al-4V ELI (AMS 4928)\n    Fatigue 550MPa at 20C (drops ~15% at 200C)\n    Density 4.43 g/cc - best mass-specific strength\n    Risk: Fretting fatigue at shaft/bearing contact zones\n\n-- FRACTURE MECHANICS (7075-T6) --\nParis Law    : da/dN = C x delta-K^m (SI units)\nParameters   : C = 6.9e-12 / m = 3.5 / R ratio = 0.1\nAt delta-K=15: da/dN = 2.3e-8 m/cycle\nCycles to ac : a0=0.5mm to ac=5mm = ~870,000 cycles\nAt f=10 Hz   : ~24 hours continuous operation to failure\n\nCOMPLETE - 2 risk flags"},
 rob:{title:"Robotics Engineering",badge:"Robotics",desc:"Mechanism design, kinematics, actuator selection, ROS2 architecture, perception, and motion planning",caps:[{n:"Kinematics & dynamics",d:"FK/IK solvers, Jacobians, Newton-Euler dynamics"},{n:"Actuator design",d:"Motor sizing, gearbox selection, backdrivability analysis"},{n:"ROS2 architecture",d:"Node graph design, message types, real-time control loops"},{n:"Perception",d:"SLAM, object detection, 3D scene understanding pipelines"},{n:"Motion planning",d:"MoveIt2, CHOMP, trajectory optimization, collision avoidance"},{n:"Grippers & end-effectors",d:"Grasping analysis, soft robotics, tool changer systems"}],ex:["Design a 6-DOF industrial arm with 10kg payload and +-0.05mm repeatability","Generate ROS2 nodes for a mobile manipulation pick-and-place task","Size actuators for a quadruped robot with 20kg body mass at 2 m/s trot"],m:["15","33","5.9k","2"],resp:"CORVERXIS SUPERMODEL - ROBOTICS ANALYSIS\n\n6-DOF manipulator architecture synthesis...\nReferencing ISO 10218-1, IEC 62061, ROS2 Iron...\n\n-- KINEMATICS --\nConfiguration: 6-DOF articulated (RRRRRR joint layout)\nReach        : 900mm horizontal / 1800mm vertical span\nWorkspace    : 85% sphere coverage at rated payload\nSingularities: Shoulder / wrist / elbow - CHOMP avoidance\n\n-- ACTUATOR SIZING --\nJoint 1 (base swing, highest torque demand):\n  Peak torque  : 180 Nm (10kg payload at 900mm extension)\n  Motor        : Maxon EC-i 40 (70W, 4000 RPM brushless)\n  Gearbox      : Harmonic Drive CSD-25-100-2UH (ratio 1:100)\n  Backlash     : Zero (strain wave gear) -> +-0.04mm rep\n\nJoint 6 (wrist roll):\n  Peak torque  : 45 Nm\n  Motor        : Maxon EC 32 (60W brushless)\n  Gearbox      : Harmonic Drive CSD-20-50-2UH (ratio 1:50)\n\n-- ROS2 ARCHITECTURE --\nFramework    : ROS2 Iron Irwini + ros2_control package\nControl loop : Joint pos/vel/effort, 1kHz update rate\nPlanning     : MoveIt2 with CHOMP trajectory optimizer\nPerception   : Intel RealSense D435i -> PCL processing\nReal-time    : Xenomai RTOS on control PC, < 0.5ms jitter\n\nCONFIRMED - 2 risk flags"},
 energy:{title:"Renewable Energy Systems",badge:"Energy",desc:"Solar, wind, hydro, and hydrogen systems: resource assessment, power conversion, grid integration, and storage",caps:[{n:"Solar PV design",d:"String sizing, inverter selection, P50/P90 yield modeling"},{n:"Wind energy",d:"Turbine selection, wake modeling, AEP calculations"},{n:"Hydro & tidal",d:"Turbine type selection, civil works, resource assessment"},{n:"Green hydrogen",d:"Electrolyzer sizing, seasonal storage, fuel cell integration"},{n:"Grid-scale storage",d:"BESS chemistry comparison, degradation, revenue stacking"},{n:"Energy yield analysis",d:"P50/P90 analysis, curtailment modeling, resource data"}],ex:["Design a 200MW offshore wind farm with 15MW turbines and HVDC export","Model a green hydrogen plant powered by 100MW solar with seasonal storage","Optimize a hybrid solar+BESS microgrid for an off-grid mining operation"],m:["17","29","3.3k","3"],resp:"CORVERXIS SUPERMODEL - RENEWABLE ENERGY ANALYSIS\n\n200MW offshore wind farm design synthesis...\nReferencing IEC 61400-1/3, CIGRE B3, DNV-ST-0145...\n\n-- WIND RESOURCE --\nHub height   : 150m (Vestas V236 tower height)\nMean wind    : 9.8 m/s at hub height (ERA5 reanalysis data)\nWeibull      : shape k=2.1 / scale lambda=11.1 m/s\nTurbulence   : 6.8% at 15m/s - classified as IEC Class A site\n\n-- TURBINES --\nModel        : Vestas V236-15.0MW (236m rotor diameter)\nQuantity     : 14 turbines (210MW nameplate capacity)\nLayout       : 2 rows x 7 turbines, 7D down / 5D crosswind\nWake losses  : 8.2% estimated using Jensen wake model\nFoundations  : Monopile type, suitable for 20-35m water depth\n\n-- ELECTRICAL SYSTEM --\nArray cables : 66kV inter-array (3x95mm2 Cu XLPE submarine)\nOffshore SS  : 2x ABB 66/220kV transformers, 120MVA each\nHVDC export  : 220kV VSC link, 200MW capacity, 60km to shore\n\n-- ENERGY YIELD --\nGross AEP    : 914 GWh/year at site conditions\nNet AEP P50  : 808 GWh/year (after wake, avail, elec losses)\nNet AEP P90  : 742 GWh/year (conservative estimate)\nCapacity fac.: 46.0% gross / 42.6% net P50\n\nVIABLE - 3 risk flags"},
+graphic:{title:"Graphic Design & Visual Systems",badge:"Design",desc:"Brand identity, UI/UX design systems, motion graphics, 3D visualization, technical illustration, and product visualization across engineering and commercial verticals",caps:[{n:"Brand identity",d:"Logo systems, typography, color theory, brand guidelines"},{n:"UI/UX design",d:"Design systems, wireframing, prototyping, user research"},{n:"Motion graphics",d:"Animation, explainer videos, kinetic typography, After Effects"},{n:"3D visualization",d:"Product renders, CAD visualization, materials, lighting"},{n:"Technical illustration",d:"Engineering diagrams, exploded views, infographics"},{n:"Print & digital",d:"Packaging, pitch decks, marketing collateral, social assets"}],ex:["Create a complete brand identity system for a deep-tech aerospace startup","Design a UI component library and design system for an industrial IoT dashboard","Develop a 3D product visualization and exploded-view technical illustration for a medical device"],m:["18","12","3.2k","2"],resp:"CORVERXIS SUPERMODEL - GRAPHIC DESIGN ANALYSIS\n\nVisual systems and brand design synthesis...\nReferencing Adobe CC standards, W3C WCAG 2.1, ISO 9241-210...\n\n-- BRAND IDENTITY SYSTEM --\nLogo          : Wordmark + icon system (primary / secondary / icon-only)\nConstruction  : Geometric grid, minimum clear space = 2x cap height\nVariants      : Full color / Reversed / Monochrome / Favicon (32x32)\nFile formats  : SVG (master) / PDF / PNG @1x 2x 3x / ICO\n\n-- COLOR SYSTEM --\nPrimary       : Navy #0e2444 (authority, precision, trust)\nAccent        : Ocean #00c2e0 (innovation, technology, energy)\nNeutral dark  : #1a2a3a (body text on light)\nNeutral light : #f0f4f8 (backgrounds, whitespace)\nSemantic      : Success #22c55e / Warning #f59e0b / Error #ef4444\nColor modes   : Light + Dark token sets (CSS custom properties)\nAccessibility : All text combinations pass WCAG 2.1 AA (4.5:1 min)\n\n-- TYPOGRAPHY SCALE --\nDisplay       : Inter 700, -2px tracking, 52/60px (hero headlines)\nHeading H1    : Inter 600, -1px tracking, 36/44px\nHeading H2    : Inter 600, 0px tracking, 28/36px\nHeading H3    : Inter 500, 0px tracking, 22/30px\nBody large    : Inter 400, 0px tracking, 18/28px\nBody          : Inter 400, 0px tracking, 16/24px\nCaption       : Inter 400, +0.5px tracking, 12/18px\nMono          : JetBrains Mono 400, 14/22px (code, data)\n\n-- DESIGN SYSTEM (UI) --\nFramework     : Token-based (Figma Tokens + Style Dictionary)\nSpacing scale : 4px base grid (4/8/12/16/24/32/48/64/96)\nBorder radius : None=0 / SM=4px / MD=8px / LG=12px / XL=16px / Full\nElevation     : 5 levels (0dp flat to 24dp modal)\nComponent lib : 120+ components (Figma + React Storybook)\nIcon system   : Tabler Icons outline (5800+ icons, 1.5px stroke)\nMotion        : Ease-out 150ms (micro) / 300ms (transition) / 500ms (page)\n\n-- 3D VISUALIZATION --\nSoftware      : Blender 4.1 (modeling) + Cycles (rendering)\nCAD import    : STEP / IGES / OBJ pipeline via Blender CAD Sketcher\nMaterials     : PBR physically based: albedo / roughness / metallic / normal\nLighting      : 3-point HDRI + area lights, 4K environment maps\nOutput        : 4K PNG / EXR passes / MP4 turntable / WebGL embed\nRender time   : ~4min per frame at 256 samples (GPU RTX class)\n\n-- MOTION GRAPHICS --\nSoftware      : After Effects + Cinema 4D Lite\nFrame rate    : 60fps (UI/product) / 24fps (brand/editorial)\nExport        : MP4 H.264 (web) / ProRes 4444 (master) / WebM (embed)\nDuration      : 15s social cut / 60s explainer / 3min brand film\nCaption style : Dynamic kinetic text, Inter Bold, ocean accent color\n\n-- TECHNICAL ILLUSTRATION --\nExploded views: Orthographic projection, numbered callouts, leader lines\nDiagram style : Clean vector, 1.5px stroke, 8px corner radius\nInfographics  : Data visualization + iconography + narrative flow\nFormats       : SVG (scalable) / PDF (print) / PNG @300dpi (export)\n\n-- ACCESSIBILITY --\nWCAG standard : 2.1 Level AA compliance on all digital deliverables\nContrast      : Text 7.2:1 (AAA) / UI components 3.1:1 (AA) checked\nMotion        : Respects prefers-reduced-motion media query\nAlt text      : Descriptive alt text spec provided for all imagery\n\nDESIGN SYSTEM COMPLETE - 2 open items\n  ITEM 1: Brand voice and tone guidelines document pending\n  ITEM 2: Accessibility audit on dark mode token set required"},
 software:{title:"Software Engineering",badge:"Software",desc:"Full-stack software architecture, cloud-native systems, distributed computing, DevSecOps, real-time embedded, and AI/ML platform engineering across all verticals",caps:[{n:"System architecture",d:"Microservices, event-driven, CQRS, domain-driven design"},{n:"Cloud & DevSecOps",d:"Kubernetes, Terraform, CI/CD pipelines, GitOps, SRE"},{n:"Embedded & RTOS",d:"Bare-metal C/C++, FreeRTOS, Zephyr, safety-critical SW"},{n:"AI/ML engineering",d:"Model training pipelines, MLOps, inference optimization"},{n:"Data & APIs",d:"REST, GraphQL, gRPC, event streaming, data lake design"},{n:"Security & compliance",d:"SAST/DAST, threat modeling, NIST, ISO 27001, SOC 2"}],ex:["Design a cloud-native microservices architecture for a real-time IoT fleet management platform","Architect an MLOps pipeline for continuous training and deployment of predictive maintenance models","Build a safety-critical embedded software architecture for an IEC 62304 Class C medical device"],m:["24","38","9.1k","4"],resp:"CORVERXIS SUPERMODEL - SOFTWARE ENGINEERING ANALYSIS\n\nSoftware architecture and systems design synthesis...\nReferencing ISO 25010, IEC 62304, NIST SP 800-53, CNCF...\n\n-- SYSTEM ARCHITECTURE --\nPattern      : Event-driven microservices (CQRS + Event Sourcing)\nServices     : Device Gateway / Ingestion / Processing / API / Reporting\nComms        : Async via Apache Kafka (3-broker cluster, RF=3)\n               Sync via gRPC (protobuf) for low-latency commands\nService mesh : Istio - mTLS, traffic shaping, circuit breaking\nAPI gateway  : Kong - rate limiting, auth, versioning\n\n-- CLOUD INFRASTRUCTURE --\nOrchestration: Kubernetes 1.29 (EKS managed, multi-AZ)\nIaC          : Terraform + Terragrunt for environment parity\nCI/CD        : GitHub Actions -> ArgoCD (GitOps, pull-based)\nObservability: Prometheus + Grafana / Jaeger tracing / ELK logs\nSecrets      : HashiCorp Vault with dynamic credentials\nMulti-region : Active-passive, RTO < 4h, RPO < 15min\n\n-- DATA PLATFORM --\nStream proc. : Apache Flink (stateful, exactly-once semantics)\nData lake    : S3 + Delta Lake (ACID transactions on object store)\nOLAP         : ClickHouse for time-series analytics at scale\nData catalog : Apache Atlas + dbt for lineage and transformation\nRetention    : Hot 30d / Warm 12mo / Cold archive S3 Glacier\n\n-- EMBEDDED SOFTWARE --\nRTOS         : FreeRTOS (configTICK_RATE_HZ = 1000)\nLanguage     : C17 + C++17 with MISRA C 2023 compliance\nScheduler    : Preemptive priority, 32 task priority levels\nDriver model : HAL abstraction over STM32 peripheral registers\nWatchdog     : IWDG 1s timeout + software task health monitor\nFirmware OTA : Delta updates via MQTT, CRC32 + ECDSA signature\n\n-- AI/ML PLATFORM --\nTraining     : MLflow + Kubeflow Pipelines on GPU node pool\nModel store  : MLflow Registry with staging/prod promotion gates\nInference    : Triton Inference Server, TensorRT optimization\nLatency SLA  : < 50ms p99 for real-time inference endpoints\nData drift   : Evidently AI monitoring, auto-retrain trigger\n\n-- SECURITY --\nFramework    : NIST SP 800-53 Rev 5 (Moderate baseline)\nSAST         : SonarQube + Semgrep in CI pipeline (block on High)\nDAST         : OWASP ZAP automated scan on staging environment\nContainer    : Trivy image scanning, distroless base images\nThreat model : STRIDE per service, updated each sprint\nCompliance   : SOC 2 Type II controls mapped, audit trail via CloudTrail\n\n-- QUALITY & TESTING --\nUnit test    : 85% line coverage gate (pytest / Google Test)\nIntegration  : Contract testing via Pact (consumer-driven)\nLoad testing : k6 - 10k concurrent users, p99 < 200ms target\nChaos        : LitmusChaos monthly GameDay exercises\n\nARCHITECTURE CONFIRMED - 4 risk flags\n  FLAG 1: Kafka cluster sizing - validate throughput at 500k msg/s\n  FLAG 2: Multi-region data sovereignty - GDPR residency review\n  FLAG 3: GPU node pool cost optimization for training workloads\n  FLAG 4: IEC 62304 Class C traceability matrix gaps to resolve"},
 def:{title:"Defense Systems",badge:"Defense",desc:"Systems engineering for defense platforms: radar, communications, survivability, EW, and mission systems architecture",caps:[{n:"Radar systems",d:"AESA aperture design, waveforms, detection performance"},{n:"Survivability",d:"RCS signatures, armor selection, electronic countermeasures"},{n:"SATCOM & datalinks",d:"Link margins, LPI/LPD waveforms, anti-jam modes"},{n:"Mission computing",d:"DO-178C software, avionics bus architecture, OpenVPX"},{n:"Cybersecurity",d:"NIST RMF, MIL-STD-882, supply chain risk management"},{n:"Systems engineering",d:"MBSE/SysML, DOORS requirements, trade studies"}],ex:["Architect an AESA radar front-end for airborne fire control at X-band","Design a jam-resistant SATCOM terminal with LPI waveforms and 2W EIRP","Create a DO-178C software plan for a flight management system (DAL A)"],m:["24","67","4.1k","8"],resp:"CORVERXIS SUPERMODEL - DEFENSE SYSTEMS ANALYSIS\n\nAESA fire control radar architecture synthesis...\nReferencing MIL-STD-461G, DO-178C, NIST SP 800-53...\n\n-- AESA APERTURE --\nFrequency    : X-band (9.0 to 10.0 GHz operating range)\nT/R modules  : 1024 elements at 0.5 lambda spacing (16.4mm)\nAperture     : ~510mm x 510mm active radiating face\nPeak power   : 50 kW transmit / 10% duty cycle / 5kW average\nBeam steering: +/-60 deg azimuth and elevation (electronic)\nGain         : 36.5 dBi / SLL: -25 dB (Taylor aperture weight)\n\n-- WAVEFORM --\nType         : LFM chirp (linear frequency modulated)\nBandwidth    : 500 MHz bandwidth -> 30cm range resolution\nPRF          : 4 to 8 kHz staggered (velocity ambiguity res.)\nECCM         : Frequency agility and randomized chirp coding\n\n-- DETECTION PERFORMANCE --\nTarget RCS   : 1 m2 (fighter aircraft at broadside aspect)\nDetect range : 185 km @ Pd=0.9, Pfa=1e-6 (0dB SNR margin)\nSmall target : 0.1 m2 (drone) detectable to 70 km range\n\n-- MISSION COMPUTING --\nArchitecture : OpenVPX 6U chassis, 12 available slots\nProcessor    : Intel Xeon D-1700 + Xilinx Ultrascale+ FPGA\nRTOS         : VxWorks 653 (ARINC 653 partitioned)\nData bus     : ARINC 664 Part 7 (AFDX) at 100Mbps\nSoftware     : DO-178C DAL A (fire control) / DAL C (HMI)\n\nARCHITECTURE CONFIRMED - 8 risk flags"}
 };
@@ -438,17 +440,356 @@ function sel(btn,k){
   render(k);
 }
 function tc(b){b.classList.toggle("active");}
-function runSM(){
-  const btn=document.getElementById("runbtn"),panel=document.getElementById("outpanel"),ob=document.getElementById("outbody");
-  btn.disabled=true;panel.classList.add("scanning");
-  ob.innerHTML=`<div class="typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div><span class="typing-text">Synthesizing across ${D[cur].m[0]} subsystems...</span></div>`;
+async function runSM(){
+  const btn=document.getElementById("runbtn");
+  const panel=document.getElementById("outpanel");
+  const ob=document.getElementById("outbody");
+  const prompt=document.getElementById("pinput").value.trim()||D[cur].ex[0];
+  const modes=[...document.querySelectorAll(".chip.active")].map(c=>c.textContent).join(", ");
+
+  btn.disabled=true;
+  panel.classList.add("scanning");
+
+  if(cur==="graphic"){
+    ob.style.display="block";
+    ob.innerHTML='<div class="typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div><span class="typing-text">Generating graphic design...</span></div>';
+
+    setTimeout(()=>{
+      panel.classList.remove("scanning");
+      btn.disabled=false;
+      ob.innerHTML="";
+
+      const p=(prompt||"brand identity").toLowerCase();
+      let design="";
+
+      // ── BRAND IDENTITY ─────────────────────────────────────────
+      if(p.includes("brand")||p.includes("logo")||p.includes("identity")||p.includes("startup")){
+        const name=p.match(/for\s+([a-z0-9\s]+?)(?:\s+brand|\s+logo|\s+company|\s+startup|$)/i);
+        const bname=name?name[1].trim().split(" ").map(w=>w[0].toUpperCase()+w.slice(1)).join(" "):"NovaTech";
+        design=`
+<div style="font-family:'Segoe UI',sans-serif;background:#f8fafc;padding:40px;min-height:500px;">
+  <p style="font-size:10px;letter-spacing:3px;color:#94a3b8;text-transform:uppercase;margin:0 0 32px;">Brand Identity System — ${bname}</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+    <!-- Logo on dark -->
+    <div style="background:#0e2444;border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <polygon points="40,8 68,24 68,56 40,72 12,56 12,24" fill="none" stroke="#00c2e0" stroke-width="2.5"/>
+        <polygon points="40,20 58,30 58,50 40,60 22,50 22,30" fill="none" stroke="#00c2e0" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="40" cy="40" r="8" fill="#00c2e0"/>
+        <circle cx="40" cy="8" r="3" fill="#00c2e0"/>
+        <circle cx="68" cy="24" r="3" fill="#00c2e0"/>
+        <circle cx="68" cy="56" r="3" fill="#00c2e0"/>
+        <circle cx="40" cy="72" r="3" fill="#00c2e0"/>
+        <circle cx="12" cy="56" r="3" fill="#00c2e0"/>
+        <circle cx="12" cy="24" r="3" fill="#00c2e0"/>
+      </svg>
+      <div style="text-align:center;">
+        <div style="font-size:22px;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase;">${bname}</div>
+        <div style="font-size:9px;letter-spacing:4px;color:#00c2e0;text-transform:uppercase;margin-top:4px;">Technologies</div>
+      </div>
+    </div>
+    <!-- Logo on white -->
+    <div style="background:#ffffff;border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;border:1px solid #e2e8f0;">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <polygon points="40,8 68,24 68,56 40,72 12,56 12,24" fill="none" stroke="#0e2444" stroke-width="2.5"/>
+        <polygon points="40,20 58,30 58,50 40,60 22,50 22,30" fill="none" stroke="#0e2444" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="40" cy="40" r="8" fill="#0e2444"/>
+        <circle cx="40" cy="8" r="3" fill="#00c2e0"/>
+        <circle cx="68" cy="24" r="3" fill="#00c2e0"/>
+        <circle cx="68" cy="56" r="3" fill="#00c2e0"/>
+        <circle cx="40" cy="72" r="3" fill="#00c2e0"/>
+        <circle cx="12" cy="56" r="3" fill="#00c2e0"/>
+        <circle cx="12" cy="24" r="3" fill="#00c2e0"/>
+      </svg>
+      <div style="text-align:center;">
+        <div style="font-size:22px;font-weight:700;color:#0e2444;letter-spacing:2px;text-transform:uppercase;">${bname}</div>
+        <div style="font-size:9px;letter-spacing:4px;color:#00c2e0;text-transform:uppercase;margin-top:4px;">Technologies</div>
+      </div>
+    </div>
+  </div>
+  <!-- Color System -->
+  <p style="font-size:10px;letter-spacing:2px;color:#94a3b8;text-transform:uppercase;margin:0 0 12px;">Color System</p>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:28px;">
+    ${[["#0e2444","Navy","Primary"],["#00c2e0","Ocean","Accent"],["#112a4e","Navy Mid","Surface"],["#e2f4f9","Ice","Background"],["#ffffff","White","Base"]].map(([c,n,r])=>`
+    <div>
+      <div style="height:64px;background:${c};border-radius:8px;margin-bottom:6px;border:1px solid rgba(0,0,0,0.08);"></div>
+      <div style="font-size:11px;font-weight:600;color:#1e293b;">${n}</div>
+      <div style="font-size:10px;color:#94a3b8;">${c}</div>
+      <div style="font-size:9px;color:#cbd5e1;text-transform:uppercase;letter-spacing:1px;">${r}</div>
+    </div>`).join("")}
+  </div>
+  <!-- Typography -->
+  <p style="font-size:10px;letter-spacing:2px;color:#94a3b8;text-transform:uppercase;margin:0 0 12px;">Typography</p>
+  <div style="background:#fff;border-radius:10px;padding:24px;border:1px solid #e2e8f0;">
+    <div style="font-size:42px;font-weight:700;color:#0e2444;letter-spacing:-1px;line-height:1;">Display Bold</div>
+    <div style="font-size:24px;font-weight:600;color:#0e2444;margin-top:8px;">Heading Semibold</div>
+    <div style="font-size:16px;font-weight:400;color:#475569;margin-top:8px;line-height:1.6;">Body Regular — The quick brown fox jumps over the lazy dog. Precision engineering meets intelligent design.</div>
+    <div style="font-size:11px;font-weight:500;color:#00c2e0;letter-spacing:3px;text-transform:uppercase;margin-top:8px;">CAPTION UPPERCASE · TRACKING WIDE</div>
+  </div>
+</div>`;
+      }
+
+      // ── UI / DASHBOARD ─────────────────────────────────────────
+      else if(p.includes("ui")||p.includes("dashboard")||p.includes("interface")||p.includes("component")||p.includes("design system")){
+        design=`
+<div style="font-family:'Segoe UI',sans-serif;background:#f1f5f9;padding:32px;min-height:500px;">
+  <p style="font-size:10px;letter-spacing:3px;color:#94a3b8;text-transform:uppercase;margin:0 0 24px;">UI Design System — Component Library</p>
+  <!-- Buttons -->
+  <div style="background:#fff;border-radius:12px;padding:24px;margin-bottom:16px;border:1px solid #e2e8f0;">
+    <div style="font-size:10px;letter-spacing:2px;color:#94a3b8;text-transform:uppercase;margin-bottom:14px;">Buttons</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <button style="background:#0e2444;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;">Primary</button>
+      <button style="background:#00c2e0;color:#0e2444;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;">Accent</button>
+      <button style="background:transparent;color:#0e2444;border:2px solid #0e2444;border-radius:8px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;">Outline</button>
+      <button style="background:#f1f5f9;color:#64748b;border:none;border-radius:8px;padding:10px 20px;font-size:13px;cursor:pointer;">Ghost</button>
+      <button style="background:#fef2f2;color:#ef4444;border:1px solid #fecaca;border-radius:8px;padding:10px 20px;font-size:13px;cursor:pointer;">Danger</button>
+    </div>
+  </div>
+  <!-- Cards -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px;">
+    ${[["#0e2444","#00c2e0","24.8k","Active Users","↑ 12%"],["#00c2e0","#0e2444","98.2%","System Uptime","↑ 0.3%"],["#112a4e","#00c2e0","$2.4M","Revenue MTD","↑ 8.1%"]].map(([bg,ac,val,lbl,ch])=>`
+    <div style="background:${bg};border-radius:10px;padding:20px;">
+      <div style="font-size:11px;color:${ac};letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">${lbl}</div>
+      <div style="font-size:28px;font-weight:700;color:#fff;">${val}</div>
+      <div style="font-size:11px;color:#22c55e;margin-top:4px;">${ch} this month</div>
+    </div>`).join("")}
+  </div>
+  <!-- Form elements -->
+  <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e2e8f0;margin-bottom:16px;">
+    <div style="font-size:10px;letter-spacing:2px;color:#94a3b8;text-transform:uppercase;margin-bottom:14px;">Form Controls</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div>
+        <label style="font-size:11px;font-weight:600;color:#374151;display:block;margin-bottom:5px;">Text Input</label>
+        <input type="text" value="Enter value..." style="width:100%;border:1.5px solid #e2e8f0;border-radius:7px;padding:9px 12px;font-size:13px;color:#374151;outline:none;box-sizing:border-box;"/>
+      </div>
+      <div>
+        <label style="font-size:11px;font-weight:600;color:#374151;display:block;margin-bottom:5px;">Select</label>
+        <select style="width:100%;border:1.5px solid #e2e8f0;border-radius:7px;padding:9px 12px;font-size:13px;color:#374151;background:#fff;box-sizing:border-box;">
+          <option>Option Alpha</option><option>Option Beta</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- Color tokens -->
+  <div style="background:#fff;border-radius:12px;padding:24px;border:1px solid #e2e8f0;">
+    <div style="font-size:10px;letter-spacing:2px;color:#94a3b8;text-transform:uppercase;margin-bottom:14px;">Color Tokens</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      ${[["#0e2444","navy-900"],["#112a4e","navy-800"],["#1a3560","navy-700"],["#00c2e0","ocean-500"],["#33cfea","ocean-400"],["#90e0ef","ocean-200"],["#e2f4f9","ocean-50"],["#22c55e","success"],["#f59e0b","warning"],["#ef4444","error"]].map(([c,n])=>`
+      <div style="text-align:center;">
+        <div style="width:40px;height:40px;background:${c};border-radius:6px;border:1px solid rgba(0,0,0,0.08);margin-bottom:4px;"></div>
+        <div style="font-size:9px;color:#94a3b8;font-family:monospace;">${n}</div>
+      </div>`).join("")}
+    </div>
+  </div>
+</div>`;
+      }
+
+      // ── INFOGRAPHIC ────────────────────────────────────────────
+      else if(p.includes("infographic")||p.includes("diagram")||p.includes("chart")||p.includes("visual")||p.includes("data")){
+        design=`
+<div style="font-family:'Segoe UI',sans-serif;background:#0e2444;padding:40px;min-height:500px;">
+  <div style="text-align:center;margin-bottom:36px;">
+    <div style="font-size:10px;letter-spacing:4px;color:#00c2e0;text-transform:uppercase;margin-bottom:8px;">Corverxis SuperModel</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;">Engineering Intelligence Platform</div>
+    <div style="font-size:13px;color:#6fa8bf;margin-top:6px;">14 Domains · 58 Expert Models · Real-time Synthesis</div>
+  </div>
+  <!-- Domain wheel -->
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:32px;">
+    ${[["Aerospace","#00c2e0"],["EV Systems","#0096b5"],["Electronics","#007a91"],["Sensors","#00c2e0"],["Power","#0096b5"],["Automation","#007a91"],["Manufacturing","#00c2e0"],["Healthcare","#0096b5"],["Materials","#007a91"],["Robotics","#00c2e0"],["Energy","#0096b5"],["Defense","#007a91"],["Software","#00c2e0"],["Design","#0096b5"]].map(([n,c])=>`
+    <div style="background:rgba(0,194,224,0.08);border:1px solid rgba(0,194,224,0.2);border-radius:8px;padding:10px 6px;text-align:center;">
+      <div style="font-size:10px;color:${c};font-weight:600;line-height:1.3;">${n}</div>
+    </div>`).join("")}
+  </div>
+  <!-- Stats row -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;">
+    ${[["14","Engineering Domains"],["58","Expert AI Models"],["2M","Token Context"],["<2s","Response Time"]].map(([v,l])=>`
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(0,194,224,0.15);border-radius:10px;padding:20px;text-align:center;">
+      <div style="font-size:32px;font-weight:700;color:#00c2e0;">${v}</div>
+      <div style="font-size:11px;color:#6fa8bf;margin-top:4px;">${l}</div>
+    </div>`).join("")}
+  </div>
+  <!-- Flow diagram -->
+  <div style="display:flex;align-items:center;justify-content:center;gap:0;">
+    ${[["Input","Engineering Prompt + Domain","#0e2444"],["→","","transparent"],["Process","Physics · Standards · Components","#102848"],["→","","transparent"],["Output","Structured Design Analysis","#0e2444"]].map(([t,s,bg])=>t==="→"?`<div style="color:#00c2e0;font-size:20px;padding:0 8px;">→</div>`:`
+    <div style="background:${bg};border:1px solid rgba(0,194,224,0.25);border-radius:10px;padding:16px 20px;text-align:center;min-width:140px;">
+      <div style="font-size:10px;letter-spacing:2px;color:#00c2e0;text-transform:uppercase;margin-bottom:4px;">${t}</div>
+      <div style="font-size:11px;color:#94a3b8;">${s}</div>
+    </div>`).join("")}
+  </div>
+</div>`;
+      }
+
+      // ── POSTER / HERO ──────────────────────────────────────────
+      else if(p.includes("poster")||p.includes("hero")||p.includes("banner")||p.includes("marketing")||p.includes("landing")){
+        design=`
+<div style="font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0e2444 0%,#112a4e 50%,#0e2444 100%);padding:60px 40px;min-height:500px;position:relative;overflow:hidden;display:flex;align-items:center;">
+  <!-- Background hex grid -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.06;" xmlns="http://www.w3.org/2000/svg">
+    <defs><pattern id="hex" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+      <polygon points="30,2 52,14 52,38 30,50 8,38 8,14" fill="none" stroke="#00c2e0" stroke-width="1"/>
+    </pattern></defs>
+    <rect width="100%" height="100%" fill="url(#hex)"/>
+  </svg>
+  <div style="position:relative;z-index:1;width:100%;">
+    <div style="font-size:10px;letter-spacing:5px;color:#00c2e0;text-transform:uppercase;margin-bottom:20px;">Corverxis Technologies</div>
+    <div style="font-size:52px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-2px;max-width:600px;">Engineering<br/><span style="color:#00c2e0;">Intelligence</span><br/>Redefined.</div>
+    <div style="font-size:16px;color:#6fa8bf;margin-top:20px;max-width:440px;line-height:1.65;">SuperModel synthesizes physics, standards, and design patterns across 14 engineering domains — delivering expert-level analysis in seconds.</div>
+    <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+      <div style="background:#00c2e0;color:#0e2444;border:none;border-radius:8px;padding:13px 28px;font-size:14px;font-weight:700;">Get Started</div>
+      <div style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25);border-radius:8px;padding:12px 28px;font-size:14px;">Learn More</div>
+    </div>
+    <div style="display:flex;gap:32px;margin-top:48px;">
+      ${[["14","Domains"],["58","AI Models"],["2M","Context"],["<2s","Response"]].map(([v,l])=>`<div><div style="font-size:24px;font-weight:700;color:#00c2e0;">${v}</div><div style="font-size:11px;color:#6fa8bf;margin-top:2px;">${l}</div></div>`).join("")}
+    </div>
+  </div>
+</div>`;
+      }
+
+      // ── COLOR PALETTE ──────────────────────────────────────────
+      else if(p.includes("color")||p.includes("palette")||p.includes("swatch")||p.includes("typography")||p.includes("type")){
+        design=`
+<div style="font-family:'Segoe UI',sans-serif;background:#f8fafc;padding:36px;min-height:500px;">
+  <p style="font-size:10px;letter-spacing:3px;color:#94a3b8;text-transform:uppercase;margin:0 0 28px;">Color & Typography System</p>
+  ${[["Navy","#0e2444","#112a4e","#1a3560","#24426e","#2e5080"],["Ocean","#003d4d","#005f73","#0096b5","#00c2e0","#33cfea"],["Neutral","#1e293b","#334155","#64748b","#94a3b8","#e2e8f0"]].map(([name,c1,c2,c3,c4,c5])=>`
+  <div style="margin-bottom:20px;">
+    <div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:8px;">${name}</div>
+    <div style="display:flex;border-radius:10px;overflow:hidden;height:60px;">
+      ${[[c1,"900"],[c2,"800"],[c3,"600"],[c4,"400"],[c5,"200"]].map(([c,s])=>`
+      <div style="flex:1;background:${c};display:flex;align-items:flex-end;padding:6px;position:relative;">
+        <span style="font-size:9px;color:rgba(255,255,255,0.7);font-family:monospace;">${s}<br/>${c}</span>
+      </div>`).join("")}
+    </div>
+  </div>`).join("")}
+  <div style="margin-top:28px;background:#fff;border-radius:12px;padding:28px;border:1px solid #e2e8f0;">
+    <div style="font-size:10px;letter-spacing:2px;color:#94a3b8;text-transform:uppercase;margin-bottom:20px;">Type Scale</div>
+    ${[["52px","700","-2px","Display"],["36px","600","-1px","H1 Heading"],["24px","600","0","H2 Heading"],["18px","400","0","Body Large"],["14px","400","0","Body"],["11px","500","2px","CAPTION / LABEL"]].map(([sz,wt,ls,lbl])=>`
+    <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #f1f5f9;padding:8px 0;">
+      <div style="min-width:120px;font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">${lbl}</div>
+      <div style="font-size:${sz};font-weight:${wt};letter-spacing:${ls};color:#0e2444;line-height:1.1;">${lbl}</div>
+    </div>`).join("")}
+  </div>
+</div>`;
+      }
+
+      // ── DEFAULT / GENERIC ──────────────────────────────────────
+      else {
+        design=`
+<div style="font-family:'Segoe UI',sans-serif;background:#0e2444;padding:40px;min-height:500px;">
+  <div style="text-align:center;margin-bottom:40px;">
+    <svg width="64" height="64" viewBox="0 0 80 80" style="margin-bottom:16px;">
+      <polygon points="40,8 68,24 68,56 40,72 12,56 12,24" fill="none" stroke="#00c2e0" stroke-width="2"/>
+      <circle cx="40" cy="40" r="8" fill="#00c2e0"/>
+      <circle cx="40" cy="8" r="3" fill="#00c2e0"/>
+      <circle cx="68" cy="24" r="3" fill="#00c2e0"/>
+      <circle cx="68" cy="56" r="3" fill="#00c2e0"/>
+      <circle cx="40" cy="72" r="3" fill="#00c2e0"/>
+      <circle cx="12" cy="56" r="3" fill="#00c2e0"/>
+      <circle cx="12" cy="24" r="3" fill="#00c2e0"/>
+    </svg>
+    <div style="font-size:32px;font-weight:700;color:#fff;letter-spacing:-1px;">SuperModel</div>
+    <div style="font-size:11px;letter-spacing:4px;color:#00c2e0;text-transform:uppercase;margin-top:6px;">Graphic Design Studio</div>
+    <div style="font-size:13px;color:#6fa8bf;margin-top:12px;max-width:360px;margin-left:auto;margin-right:auto;line-height:1.6;">
+      Try a more specific prompt to generate your design. Examples below:
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:500px;margin:0 auto;">
+    ${[["Brand Identity","Logo, colors, typography system"],["UI Dashboard","Components, cards, design tokens"],["Infographic","Data visualization, diagrams"],["Hero / Poster","Marketing banner, landing page"],["Color Palette","Swatches, type scale, tokens"],["Custom","Describe what you need"]].map(([t,d])=>`
+    <div style="background:rgba(0,194,224,0.07);border:1px solid rgba(0,194,224,0.18);border-radius:10px;padding:16px;cursor:pointer;">
+      <div style="font-size:13px;font-weight:600;color:#e2f4f9;">${t}</div>
+      <div style="font-size:11px;color:#6fa8bf;margin-top:3px;">${d}</div>
+    </div>`).join("")}
+  </div>
+</div>`;
+      }
+
+      // ── RENDER THE DESIGN ──────────────────────────────────────
+      const toolbar=document.createElement("div");
+      toolbar.style.cssText="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;";
+      toolbar.innerHTML=`
+        <span style="font-size:10px;font-family:monospace;color:var(--ocean-l);letter-spacing:1px;text-transform:uppercase;">Design Output</span>
+        <div style="display:flex;gap:6px;">
+          <button onclick="openDesignInTab()" style="background:var(--ocean-d);border:none;border-radius:5px;padding:5px 12px;color:#fff;font-size:11px;font-weight:600;cursor:pointer;">&#8599; Open in Tab</button>
+          <button onclick="downloadDesign()" style="background:transparent;border:1px solid var(--border2);border-radius:5px;padding:5px 12px;color:var(--ocean-l);font-size:11px;cursor:pointer;">&#8595; Download</button>
+          <button onclick="document.getElementById('runbtn').click()" style="background:transparent;border:1px solid var(--border2);border-radius:5px;padding:5px 12px;color:var(--ocean-l);font-size:11px;cursor:pointer;">&#8635; Regenerate</button>
+        </div>`;
+      ob.appendChild(toolbar);
+
+      const canvas=document.createElement("div");
+      canvas.style.cssText="border-radius:10px;overflow:hidden;border:1px solid rgba(0,194,224,0.15);";
+      canvas.innerHTML=design;
+      ob.appendChild(canvas);
+
+      window._lastDesignHTML=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>SuperModel Design — Corverxis</title></head><body style="margin:0;padding:0;">${design}</body></html>`;
+
+      const m=D[cur].m;
+      ["m1","m2","m3","m4"].forEach((id,i)=>document.getElementById(id).textContent=m[i]);
+      document.getElementById("mrow").style.display="grid";
+
+    },1600+Math.random()*600);
+    return;
+  }
+
+  // All other domains — static responses (no CORS issues)
+  ob.innerHTML='<div class="typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div><span class="typing-text">Synthesizing across '+D[cur].m[0]+' subsystems...</span></div>';
   setTimeout(()=>{
-    panel.classList.remove("scanning");btn.disabled=false;
-    ob.innerHTML="";ob.textContent=D[cur].resp;
+    panel.classList.remove("scanning");
+    btn.disabled=false;
+    ob.innerHTML="";
+    ob.textContent=D[cur].resp;
     const m=D[cur].m;
     ["m1","m2","m3","m4"].forEach((id,i)=>document.getElementById(id).textContent=m[i]);
     document.getElementById("mrow").style.display="grid";
-  },2000+Math.random()*700);
+  },1800+Math.random()*700);
+}
+
+function downloadDesign(){
+  if(!window._lastDesignHTML)return;
+  try {
+    // Method 1: Blob URL (modern browsers)
+    const blob = new Blob([window._lastDesignHTML], {type:"text/html;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "corverxis-supermodel-design.html";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); document.body.removeChild(a); }, 1000);
+  } catch(e1) {
+    try {
+      // Method 2: Open in new tab
+      const w = window.open("","_blank");
+      w.document.write(window._lastDesignHTML);
+      w.document.close();
+    } catch(e2) {
+      // Method 3: Show copy prompt
+      const ta = document.createElement("textarea");
+      ta.value = window._lastDesignHTML;
+      ta.style.cssText = "position:fixed;top:10px;left:10px;width:80vw;height:60vh;z-index:99999;font-size:11px;font-family:monospace;padding:12px;";
+      document.body.appendChild(ta);
+      ta.select();
+      alert("Press Ctrl+C to copy the design HTML, then paste into a .html file.");
+      setTimeout(()=>document.body.removeChild(ta), 30000);
+    }
+  }
+}
+
+function openDesignInTab(){
+  if(!window._lastDesignHTML)return;
+  const w = window.open("","_blank");
+  if(w){
+    w.document.write(window._lastDesignHTML);
+    w.document.close();
+  }
+}
+
+function regenerateDesign(){
+  closeDesign();
+  setTimeout(()=>document.getElementById("runbtn").click(),200);
+}
+
+function closeDesign(){
+  const o=document.getElementById("design-overlay");
+  if(o)o.remove();
 }
 render("aerospace");
 </script>

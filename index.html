@@ -419,7 +419,7 @@ body.light-mode{--navy-base:#f0f4f8;--navy-deep:#e2e8f0;--navy-mid:#d1dce8;--nav
     </div>
     <div class="header-right">
       <div class="status-live"><div class="status-dot"></div><span>Systems online</span></div>
-      <span class="hdr-stat">Models: <span>63 domain experts</span></span>
+      <span class="hdr-stat">Models: <span>75 domain experts</span></span>
       <span class="hdr-stat">Engine: <span>Physics &middot; CAD &middot; EDA &middot; BIO</span></span>
     </div>
   </div>
@@ -427,7 +427,7 @@ body.light-mode{--navy-base:#f0f4f8;--navy-deep:#e2e8f0;--navy-mid:#d1dce8;--nav
 
 <div class="subheader">
   <div class="sh-item">Engine: <span>Physics + Simulation + Standards DB</span></div>
-  <div class="sh-item">Verticals: <span>15 loaded</span></div>
+  <div class="sh-item">Verticals: <span>17 loaded</span></div>
   <div class="sh-item">Context: <span>2M tokens</span></div>
   <div class="sh-item">Platform: <span>Corverxis SuperModel v1.0</span></div>
 </div>
@@ -509,6 +509,8 @@ body.light-mode{--navy-base:#f0f4f8;--navy-deep:#e2e8f0;--navy-mid:#d1dce8;--nav
     <button class="nav-btn" onclick="sel(this,'rob')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="10" width="10" height="10" rx="1"/><path d="M9 10V7a3 3 0 016 0v3"/><circle cx="9.5" cy="15" r="1" fill="currentColor"/><circle cx="14.5" cy="15" r="1" fill="currentColor"/></svg>Robotics</button>
     <button class="nav-btn" onclick="sel(this,'energy')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3"/><circle cx="12" cy="12" r="4"/><path d="M18.4 5.6l-.7.7M6.3 17.7l-.7.7M18.4 18.4l-.7-.7M6.3 6.3l-.7-.7"/></svg>Renewable Energy</button>
     <button class="nav-btn" onclick="sel(this,'def')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 9-8 10C7.5 21 4 17 4 12V7l8-4z"/></svg>Defense Systems</button>
+    <button class="nav-btn" onclick="sel(this,'mining')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M6 20V10l6-6 6 6v10"/><path d="M9 20v-5h6v5"/><path d="M12 4v3M8 8l2 2M16 8l-2 2"/><circle cx="12" cy="14" r="1" fill="currentColor"/></svg>Mining Engineering</button>
+    <button class="nav-btn" onclick="sel(this,'proddev')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/><circle cx="12" cy="12" r="3"/></svg>Product Development</button>
     <button class="nav-btn" onclick="sel(this,'software')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Software Engineering</button>
     <button class="nav-btn" onclick="sel(this,'graphic')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10"/><path d="M12 8v1m0 6v1M8 12h1m6 0h1"/><path d="M19 5l-1.5 1.5M17.5 3.5L19 5"/></svg>Graphic Design</button>
   </nav>
@@ -547,6 +549,9 @@ body.light-mode{--navy-base:#f0f4f8;--navy-deep:#e2e8f0;--navy-mid:#d1dce8;--nav
           <span class="badge badge-ocean">Multi-domain</span>
           <span class="badge badge-green">Physics-grounded</span>
           <span class="badge badge-amber" id="dbadge">Aerospace</span>
+          <button id="blueprintBtn" onclick="downloadBlueprint()" style="display:none;background:var(--ocean-d);border:none;border-radius:5px;padding:4px 12px;color:#fff;font-size:10px;font-weight:600;cursor:pointer;font-family:var(--mono);letter-spacing:1px;transition:background 0.15s;gap:5px;align-items:center;" title="Download engineering blueprint PDF">
+            &#8595; BLUEPRINT
+          </button>
         </div>
       </div>
       <div class="output-body" id="outbody"><span class="output-placeholder">Select a domain, enter your engineering prompt, and click Run SuperModel. Corverxis SuperModel synthesizes domain-specific physics, component libraries, standards, and design patterns to generate detailed engineering output.</span></div>
@@ -660,6 +665,230 @@ rob:{title:"Robotics Engineering",badge:"Robotics",desc:"Mechanism design, kinem
 energy:{title:"Renewable Energy Systems",badge:"Energy",desc:"Solar, wind, hydro, and hydrogen systems: resource assessment, power conversion, grid integration, and storage",caps:[{n:"Solar PV design",d:"String sizing, inverter selection, P50/P90 yield modeling"},{n:"Wind energy",d:"Turbine selection, wake modeling, AEP calculations"},{n:"Hydro & tidal",d:"Turbine type selection, civil works, resource assessment"},{n:"Green hydrogen",d:"Electrolyzer sizing, seasonal storage, fuel cell integration"},{n:"Grid-scale storage",d:"BESS chemistry comparison, degradation, revenue stacking"},{n:"Energy yield analysis",d:"P50/P90 analysis, curtailment modeling, resource data"}],ex:["Design a 200MW offshore wind farm with 15MW turbines and HVDC export","Model a green hydrogen plant powered by 100MW solar with seasonal storage","Optimize a hybrid solar+BESS microgrid for an off-grid mining operation"],m:["17","29","3.3k","3"],resp:"CORVERXIS SUPERMODEL - RENEWABLE ENERGY ANALYSIS\n\n200MW offshore wind farm design synthesis...\nReferencing IEC 61400-1/3, CIGRE B3, DNV-ST-0145...\n\n-- WIND RESOURCE --\nHub height   : 150m (Vestas V236 tower height)\nMean wind    : 9.8 m/s at hub height (ERA5 reanalysis data)\nWeibull      : shape k=2.1 / scale lambda=11.1 m/s\nTurbulence   : 6.8% at 15m/s - classified as IEC Class A site\n\n-- TURBINES --\nModel        : Vestas V236-15.0MW (236m rotor diameter)\nQuantity     : 14 turbines (210MW nameplate capacity)\nLayout       : 2 rows x 7 turbines, 7D down / 5D crosswind\nWake losses  : 8.2% estimated using Jensen wake model\nFoundations  : Monopile type, suitable for 20-35m water depth\n\n-- ELECTRICAL SYSTEM --\nArray cables : 66kV inter-array (3x95mm2 Cu XLPE submarine)\nOffshore SS  : 2x ABB 66/220kV transformers, 120MVA each\nHVDC export  : 220kV VSC link, 200MW capacity, 60km to shore\n\n-- ENERGY YIELD --\nGross AEP    : 914 GWh/year at site conditions\nNet AEP P50  : 808 GWh/year (after wake, avail, elec losses)\nNet AEP P90  : 742 GWh/year (conservative estimate)\nCapacity fac.: 46.0% gross / 42.6% net P50\n\nVIABLE - 3 risk flags"},
 graphic:{title:"Graphic Design & Visual Systems",badge:"Design",desc:"Brand identity, UI/UX design systems, motion graphics, 3D visualization, technical illustration, and product visualization across engineering and commercial verticals",caps:[{n:"Brand identity",d:"Logo systems, typography, color theory, brand guidelines"},{n:"UI/UX design",d:"Design systems, wireframing, prototyping, user research"},{n:"Motion graphics",d:"Animation, explainer videos, kinetic typography, After Effects"},{n:"3D visualization",d:"Product renders, CAD visualization, materials, lighting"},{n:"Technical illustration",d:"Engineering diagrams, exploded views, infographics"},{n:"Print & digital",d:"Packaging, pitch decks, marketing collateral, social assets"}],ex:["Create a complete brand identity system for a deep-tech aerospace startup","Design a UI component library and design system for an industrial IoT dashboard","Develop a 3D product visualization and exploded-view technical illustration for a medical device"],m:["18","12","3.2k","2"],resp:"CORVERXIS SUPERMODEL - GRAPHIC DESIGN ANALYSIS\n\nVisual systems and brand design synthesis...\nReferencing Adobe CC standards, W3C WCAG 2.1, ISO 9241-210...\n\n-- BRAND IDENTITY SYSTEM --\nLogo          : Wordmark + icon system (primary / secondary / icon-only)\nConstruction  : Geometric grid, minimum clear space = 2x cap height\nVariants      : Full color / Reversed / Monochrome / Favicon (32x32)\nFile formats  : SVG (master) / PDF / PNG @1x 2x 3x / ICO\n\n-- COLOR SYSTEM --\nPrimary       : Navy #0e2444 (authority, precision, trust)\nAccent        : Ocean #00c2e0 (innovation, technology, energy)\nNeutral dark  : #1a2a3a (body text on light)\nNeutral light : #f0f4f8 (backgrounds, whitespace)\nSemantic      : Success #22c55e / Warning #f59e0b / Error #ef4444\nColor modes   : Light + Dark token sets (CSS custom properties)\nAccessibility : All text combinations pass WCAG 2.1 AA (4.5:1 min)\n\n-- TYPOGRAPHY SCALE --\nDisplay       : Inter 700, -2px tracking, 52/60px (hero headlines)\nHeading H1    : Inter 600, -1px tracking, 36/44px\nHeading H2    : Inter 600, 0px tracking, 28/36px\nHeading H3    : Inter 500, 0px tracking, 22/30px\nBody large    : Inter 400, 0px tracking, 18/28px\nBody          : Inter 400, 0px tracking, 16/24px\nCaption       : Inter 400, +0.5px tracking, 12/18px\nMono          : JetBrains Mono 400, 14/22px (code, data)\n\n-- DESIGN SYSTEM (UI) --\nFramework     : Token-based (Figma Tokens + Style Dictionary)\nSpacing scale : 4px base grid (4/8/12/16/24/32/48/64/96)\nBorder radius : None=0 / SM=4px / MD=8px / LG=12px / XL=16px / Full\nElevation     : 5 levels (0dp flat to 24dp modal)\nComponent lib : 120+ components (Figma + React Storybook)\nIcon system   : Tabler Icons outline (5800+ icons, 1.5px stroke)\nMotion        : Ease-out 150ms (micro) / 300ms (transition) / 500ms (page)\n\n-- 3D VISUALIZATION --\nSoftware      : Blender 4.1 (modeling) + Cycles (rendering)\nCAD import    : STEP / IGES / OBJ pipeline via Blender CAD Sketcher\nMaterials     : PBR physically based: albedo / roughness / metallic / normal\nLighting      : 3-point HDRI + area lights, 4K environment maps\nOutput        : 4K PNG / EXR passes / MP4 turntable / WebGL embed\nRender time   : ~4min per frame at 256 samples (GPU RTX class)\n\n-- MOTION GRAPHICS --\nSoftware      : After Effects + Cinema 4D Lite\nFrame rate    : 60fps (UI/product) / 24fps (brand/editorial)\nExport        : MP4 H.264 (web) / ProRes 4444 (master) / WebM (embed)\nDuration      : 15s social cut / 60s explainer / 3min brand film\nCaption style : Dynamic kinetic text, Inter Bold, ocean accent color\n\n-- TECHNICAL ILLUSTRATION --\nExploded views: Orthographic projection, numbered callouts, leader lines\nDiagram style : Clean vector, 1.5px stroke, 8px corner radius\nInfographics  : Data visualization + iconography + narrative flow\nFormats       : SVG (scalable) / PDF (print) / PNG @300dpi (export)\n\n-- ACCESSIBILITY --\nWCAG standard : 2.1 Level AA compliance on all digital deliverables\nContrast      : Text 7.2:1 (AAA) / UI components 3.1:1 (AA) checked\nMotion        : Respects prefers-reduced-motion media query\nAlt text      : Descriptive alt text spec provided for all imagery\n\nDESIGN SYSTEM COMPLETE - 2 open items\n  ITEM 1: Brand voice and tone guidelines document pending\n  ITEM 2: Accessibility audit on dark mode token set required"},
 software:{title:"Software Engineering",badge:"Software",desc:"Full-stack software architecture, cloud-native systems, distributed computing, DevSecOps, real-time embedded, and AI/ML platform engineering across all verticals",caps:[{n:"System architecture",d:"Microservices, event-driven, CQRS, domain-driven design"},{n:"Cloud & DevSecOps",d:"Kubernetes, Terraform, CI/CD pipelines, GitOps, SRE"},{n:"Embedded & RTOS",d:"Bare-metal C/C++, FreeRTOS, Zephyr, safety-critical SW"},{n:"AI/ML engineering",d:"Model training pipelines, MLOps, inference optimization"},{n:"Data & APIs",d:"REST, GraphQL, gRPC, event streaming, data lake design"},{n:"Security & compliance",d:"SAST/DAST, threat modeling, NIST, ISO 27001, SOC 2"}],ex:["Design a cloud-native microservices architecture for a real-time IoT fleet management platform","Architect an MLOps pipeline for continuous training and deployment of predictive maintenance models","Build a safety-critical embedded software architecture for an IEC 62304 Class C medical device"],m:["24","38","9.1k","4"],resp:"CORVERXIS SUPERMODEL - SOFTWARE ENGINEERING ANALYSIS\n\nSoftware architecture and systems design synthesis...\nReferencing ISO 25010, IEC 62304, NIST SP 800-53, CNCF...\n\n-- SYSTEM ARCHITECTURE --\nPattern      : Event-driven microservices (CQRS + Event Sourcing)\nServices     : Device Gateway / Ingestion / Processing / API / Reporting\nComms        : Async via Apache Kafka (3-broker cluster, RF=3)\n               Sync via gRPC (protobuf) for low-latency commands\nService mesh : Istio - mTLS, traffic shaping, circuit breaking\nAPI gateway  : Kong - rate limiting, auth, versioning\n\n-- CLOUD INFRASTRUCTURE --\nOrchestration: Kubernetes 1.29 (EKS managed, multi-AZ)\nIaC          : Terraform + Terragrunt for environment parity\nCI/CD        : GitHub Actions -> ArgoCD (GitOps, pull-based)\nObservability: Prometheus + Grafana / Jaeger tracing / ELK logs\nSecrets      : HashiCorp Vault with dynamic credentials\nMulti-region : Active-passive, RTO < 4h, RPO < 15min\n\n-- DATA PLATFORM --\nStream proc. : Apache Flink (stateful, exactly-once semantics)\nData lake    : S3 + Delta Lake (ACID transactions on object store)\nOLAP         : ClickHouse for time-series analytics at scale\nData catalog : Apache Atlas + dbt for lineage and transformation\nRetention    : Hot 30d / Warm 12mo / Cold archive S3 Glacier\n\n-- EMBEDDED SOFTWARE --\nRTOS         : FreeRTOS (configTICK_RATE_HZ = 1000)\nLanguage     : C17 + C++17 with MISRA C 2023 compliance\nScheduler    : Preemptive priority, 32 task priority levels\nDriver model : HAL abstraction over STM32 peripheral registers\nWatchdog     : IWDG 1s timeout + software task health monitor\nFirmware OTA : Delta updates via MQTT, CRC32 + ECDSA signature\n\n-- AI/ML PLATFORM --\nTraining     : MLflow + Kubeflow Pipelines on GPU node pool\nModel store  : MLflow Registry with staging/prod promotion gates\nInference    : Triton Inference Server, TensorRT optimization\nLatency SLA  : < 50ms p99 for real-time inference endpoints\nData drift   : Evidently AI monitoring, auto-retrain trigger\n\n-- SECURITY --\nFramework    : NIST SP 800-53 Rev 5 (Moderate baseline)\nSAST         : SonarQube + Semgrep in CI pipeline (block on High)\nDAST         : OWASP ZAP automated scan on staging environment\nContainer    : Trivy image scanning, distroless base images\nThreat model : STRIDE per service, updated each sprint\nCompliance   : SOC 2 Type II controls mapped, audit trail via CloudTrail\n\n-- QUALITY & TESTING --\nUnit test    : 85% line coverage gate (pytest / Google Test)\nIntegration  : Contract testing via Pact (consumer-driven)\nLoad testing : k6 - 10k concurrent users, p99 < 200ms target\nChaos        : LitmusChaos monthly GameDay exercises\n\nARCHITECTURE CONFIRMED - 4 risk flags\n  FLAG 1: Kafka cluster sizing - validate throughput at 500k msg/s\n  FLAG 2: Multi-region data sovereignty - GDPR residency review\n  FLAG 3: GPU node pool cost optimization for training workloads\n  FLAG 4: IEC 62304 Class C traceability matrix gaps to resolve"},
+proddev:{title:"Product Development",badge:"ProdDev",desc:"End-to-end physical product development: concept ideation, industrial design, engineering validation, DFM, supply chain sourcing, prototyping, regulatory approval, mass production ramp, and go-to-market launch across consumer, industrial, and medical product verticals",
+caps:[
+  {n:"Concept & ideation",d:"Design sprints, user research, Jobs-to-be-Done, value proposition"},
+  {n:"Industrial design",d:"Form factor, CMF, ergonomics, CAD modeling, design language"},
+  {n:"Engineering validation",d:"DVT/EVT/PVT cycles, test protocols, failure analysis, design freeze"},
+  {n:"DFM & supply chain",d:"Manufacturer sourcing, tooling, BOM costing, component qualification"},
+  {n:"Prototyping",d:"Rapid prototyping, functional prototypes, user testing, iteration"},
+  {n:"Launch & production",d:"MP ramp, quality gates, yield management, GTM planning"}
+],
+ex:[
+  "Develop a complete product development roadmap for a consumer IoT health wearable from concept to mass production",
+  "Design DVT test protocol and failure mode analysis for a new industrial power tool with 2-year warranty requirement",
+  "Source and qualify a manufacturing partner in Asia for a 50,000 unit/year smart home device with UL/CE certification"
+],
+m:["28","37","5.4k","6"],
+resp:`CORVERXIS SUPERMODEL - PRODUCT DEVELOPMENT ANALYSIS
+
+End-to-end product development synthesis...
+Referencing IEC 62133, UL 62368-1, ISO 9001, IPC-A-610, ISTA 3A...
+
+-- PHASE 1: CONCEPT & IDEATION --
+Methodology      : Double Diamond design process (Discover/Define/Develop/Deliver)
+User research    : 24x contextual interviews, 3x focus groups, diary studies (2 weeks)
+JTBD framework   : Primary job: "Track my health metrics without interrupting my day"
+Value prop       : Passive continuous monitoring + actionable insights + 14-day battery
+Competitive gap  : No existing product combines medical-grade accuracy + fashion-forward design
+Concept selection: Pugh matrix (8 concepts x 12 criteria) -> 2 concepts advanced to Phase 2
+Key risk         : Sensor accuracy vs. form factor constraint (resolved: dual PPG + IMU fusion)
+
+-- PHASE 2: INDUSTRIAL DESIGN --
+Form factor      : Round watch, 42mm case, 11.2mm profile, 20mm interchangeable band
+Materials (CMF)  : Case: 6061-T6 aluminium, PVD coated + Gorilla Glass 5 lens
+                   Band: TPU primary / recycled nylon secondary
+                   Crown: Stainless steel 316L, screw-lock IP68
+Display          : 1.4in AMOLED 454x454px, 1000 nit peak brightness
+Ergonomics       : Wearing comfort study - 50th percentile male/female wrist geometry
+                   Watch-to-skin pressure < 12 kPa (no pressure ulcer risk)
+CAD tools        : SolidWorks (mechanical) + Alias (Class-A surfacing) + KeyShot (renders)
+Design language  : Corverxis precision series - aviation-inspired dial, mineral texture finish
+IP rating        : IP68 (50m / 30min) per IEC 60529 - tested at 60m for margin
+
+-- PHASE 3: ENGINEERING VALIDATION --
+EVT (Engineering Validation Test) - 60 units, 8 weeks:
+  Functional      : All sensors, display, connectivity, haptics - pass/fail matrix
+  Environmental   : MIL-STD-810H (temp -20 to +60C, humidity 95%RH, altitude 4500m)
+  Drop test       : IEC 60068-2-31, 1.5m onto concrete, 6 faces x 3 units - zero crack
+  Battery cycle   : 500 full cycles to 80% SoH at 25C (Li-ion NMC 410mAh)
+  Charging        : 10,000 magnetic charge cycles, connector wear verification
+
+DVT (Design Validation Test) - 120 units, 10 weeks:
+  Reliability     : HALT (Highly Accelerated Life Test) - thermal cycling -40 to +100C
+  Vibration       : Random vibration 5-500Hz, 3 axes, IEC 60068-2-64
+  User trial      : 60-person wear trial, 4 weeks, daily comfort and accuracy logging
+  EMC             : FCC Part 15B (USA) / ETSI EN 301 489 (EU) pre-compliance
+  SAR             : FCC OET Bulletin 65 - 0.8 W/kg measured (limit: 1.6 W/kg) - PASS
+
+PVT (Production Validation Test) - 500 units from production line, 6 weeks:
+  AQL inspection  : Level II, AQL 1.0 (critical) / 2.5 (major) / 4.0 (minor)
+  Yield target    : > 97% first-pass yield before MP approval
+  Calibration     : Factory PPG calibration fixture, +/- 2% SpO2 accuracy
+  OQC             : 100% functional test + 10% accelerated aging (72h at 60C)
+
+-- PHASE 4: DFM & SUPPLY CHAIN --
+ODM strategy     : Primary ODM: Foxconn Shenzhen (wearables div.) + backup Luxshare
+Tooling          : 14x injection molds (P20 steel), 3x die-cast tools (A380 aluminium)
+                   Tooling lead time: 10 weeks / Tool cost: $380,000 total
+BOM structure    :
+  PCBA           : Mediatek MT2625 SoC + Nordic nRF5340 BLE + TI AFE4950 PPG
+  Battery        : Varta CL2016 410mAh NMC prismatic (UL 62133 certified)
+  Display module : BOE 1.4in AMOLED (BOE076W01-V0)
+  Sensors        : ST LSM6DSO32 IMU + Bosch BMP390 barometer
+  Total BOM cost : $38.40 at 50k/year MOQ (target sell price $199 = 5.2x margin)
+Component risk   : AMOLED display - single source BOE, 16-week lead time
+                   Mitigation: 6-month rolling forecast + 2-month buffer stock
+
+Certifications timeline (14 months total):
+  FCC ID         : 4 months / $45,000 / FCC-accredited lab (UL Verification Services)
+  CE marking     : 3 months / $28,000 / Notified body (SGS, TUV)
+  UL 62368-1    : 3 months / $32,000 (combined with CE testing where possible)
+  FDA 510(k)    : 12 months if medical claims made (avoid -> wellness positioning)
+  RoHS / REACH  : Supplier declaration + spot-testing / $8,000
+
+-- PHASE 5: PROTOTYPING TIMELINE --
+Week 1-4   : 3D printed concept models (FDM + SLA), foam models for ergonomics
+Week 5-8   : CNC machined alpha units (10x), PCB hand assembly for functional testing
+Week 9-16  : EVT build at ODM, first injection molded parts
+Week 17-28 : DVT build, production-intent tooling, full cert testing begins
+Week 29-40 : PVT build, process qualification, yield optimization
+Week 41    : Mass production release (MP0)
+
+-- PHASE 6: PRODUCTION RAMP & LAUNCH --
+Year 1 volume    : 50,000 units (monthly ramp: 1k -> 5k -> 8k -> 10k by month 6)
+Quality system   : ISO 9001:2015 at ODM site, monthly audits by Corverxis QA team
+Packaging        : FSC-certified paperboard, plastic-free unboxing (Apple standard equiv.)
+Logistics        : 3PL via DHL Supply Chain, FBA for Amazon channel (40% of volume)
+GTM channels     : DTC website (30%) / Amazon (40%) / B2B health platforms (30%)
+Pricing strategy : $199 MSRP, $149 B2B / 50+ units, $99 refurbished channel
+Launch plan      : 3-month pre-launch waitlist -> influencer seeding -> paid social
+Post-launch      : NPS target > 65, 30-day return rate < 3%, 12-month repurchase 22%
+
+-- WARRANTY & AFTER-SALES --
+Warranty period  : 2 years (EU mandatory) / 1 year USA / extended 3yr optional
+MTBF target      : 50,000 hours at 25C (HALT/HASS validated)
+Field return rate: < 0.8% annualized (industry benchmark: 2-3%)
+Repair strategy  : Advance exchange (< $20 repair cost threshold) / depot repair above
+Spare parts      : 5-year spare parts commitment post-EOL (EU WEEE requirement)
+
+ANALYSIS COMPLETE - 6 risk flags
+  FLAG 1: AMOLED single-source supply - qualify second source by DVT complete
+  FLAG 2: FCC certification timeline may compress if hardware changes in DVT
+  FLAG 3: Battery capacity may conflict with 11.2mm profile - validate at EVT
+  FLAG 4: SpO2 medical claim triggers FDA 510(k) - confirm wellness-only positioning
+  FLAG 5: ODM NDA and IP assignment agreement must be signed before tooling release
+  FLAG 6: CE REACH compliance - 4 restricted substances flagged in initial BOM review`
+},
+mining:{title:"Mining Engineering - Open Pit & Safety",badge:"Mining",desc:"Open pit mine design, blast engineering, slope stability, haul road design, equipment selection, ventilation, water management, and comprehensive occupational health and safety systems for surface and underground mining operations",
+caps:[
+  {n:"Open pit design",d:"Pit geometry, pushback sequencing, ultimate pit limit optimization"},
+  {n:"Blast engineering",d:"Drill pattern design, explosive selection, blast timing, vibration control"},
+  {n:"Slope stability",d:"Geotechnical analysis, failure modes, monitoring, reinforcement"},
+  {n:"Equipment selection",d:"Shovel/truck fleet sizing, haul cycle, productivity analysis"},
+  {n:"Mine safety systems",d:"Risk assessment, emergency response, regulatory compliance (MSHA/DMR)"},
+  {n:"Water & environment",d:"Dewatering, acid rock drainage, tailings design, closure planning"}
+],
+ex:[
+  "Design an open pit mine for a 50Mt copper ore body at 0.4% Cu grade with 15-year mine life",
+  "Calculate blast pattern for 15m bench height in granite with 90mm drill diameter",
+  "Perform slope stability analysis for a 45-degree pit wall in weathered basalt at 200m depth"
+],
+m:["21","44","6.8k","9"],
+resp:`CORVERXIS SUPERMODEL - MINING ENGINEERING ANALYSIS
+
+Open pit mine design and safety systems synthesis...
+Referencing ISO 19434, MSHA 30 CFR, SANS 10286, SME Mining Handbook...
+
+-- PIT DESIGN & OPTIMIZATION --
+Ore body          : 50Mt at 0.4% Cu, tabular deposit dipping 45 deg SW
+Strip ratio       : 2.8:1 (waste:ore) at optimum pit shell
+Bench height      : 15m (production) / 7.5m (pre-split cleanup)
+Bench face angle  : 75 deg in fresh rock / 60 deg in weathered zone
+Overall slope     : 45 deg (geotechnical constraint - phyllite interbed)
+Pit dimensions    : 2.4km long x 1.8km wide x 380m deep at UPL
+Annual throughput : 3.3Mt ore + 9.3Mt waste = 12.6Mt total material
+
+-- BLAST ENGINEERING --
+Rock type         : Medium-hard granite (UCS 120-160 MPa, RQD 65-80%)
+Drill diameter    : 311mm (production) / 165mm (pre-split)
+Burden x Spacing  : 7.5m x 9.0m (B:S ratio 1:1.2)
+Sub-drill         : 2.3m (15% of burden)
+Stemming          : 5.5m crushed rock aggregate (3/4 inch)
+Explosive         : ANFO 94:6 blend, density 0.85 g/cc
+Powder factor     : 0.28 kg/t (granite fragmentation target P80 = 800mm)
+Initiation        : Non-electric NONEL / electronic detonator hybrid
+Inter-row delay   : 42ms (2x burden / P-wave velocity)
+Vibration limit   : 5 mm/s PPV at nearest structure (150m buffer zone)
+Flyrock exclusion : 500m radius cleared before blast, sentry posts deployed
+
+-- SLOPE STABILITY --
+Analysis method   : Limit equilibrium (Bishop simplified) + Numerical (Phase2)
+Failure modes     : Planar (J1 set, dip 38 deg), Wedge (J1 x J2), Circular
+Factor of Safety  : FS >= 1.3 static / FS >= 1.1 pseudo-static (seismic)
+Groundwater       : Phreatic surface 40m above pit floor - active dewatering req.
+Reinforcement     : Rock bolts 6m @ 2.5m x 2.5m grid in critical zones
+Monitoring        : Slope radar (GroundProbe SSR-XT) + 12x prism targets
+Trigger Action Response Plan (TARP):
+  YELLOW : displacement > 5mm/day -> increase monitoring frequency
+  ORANGE : displacement > 20mm/day -> restrict equipment access
+  RED    : displacement > 50mm/day -> full pit evacuation
+
+-- EQUIPMENT FLEET --
+Primary loading   : 2x CAT 7495 electric rope shovel (54.4m3 dipper)
+Haul trucks       : 18x Komatsu 930E-5 (290t payload, 2700kW)
+Auxiliary fleet   : 4x CAT 16M grader, 6x CAT D11T dozer, 3x water cart
+Drill rigs        : 3x Epiroc PV-351 rotary (311mm, 450kW)
+Annual fuel       : 68M liters diesel - evaluate trolley assist at 8% grade ramp
+Haul cycle time   : 24.5 min (1.8km haul, 10% grade, 48 km/h laden)
+Fleet productivity: 12,200 BCM/shift per shovel at 83% mechanical availability
+
+-- MINE SAFETY SYSTEMS --
+Regulatory        : MSHA 30 CFR Part 56 (surface) / DMR Mine Health & Safety Act
+Risk framework    : ISO 31000 + Bowtie methodology for critical controls
+Safety hierarchy  : Elimination -> Substitution -> Engineering -> Admin -> PPE
+
+Critical control standards:
+  Haul road width  : 3.5x widest vehicle = 3.5 x 9.2m = 32.2m (two-lane + berm)
+  Berm height      : 1x tire diameter = 2.7m minimum on all edges
+  Lighting         : Minimum 50 lux at haulage intersections (AS/NZS 1680)
+  Exclusion zones  : 50m blast exclusion, shot firer verification + all-clear
+  Proximity detect : Hexagon Collision Avoidance System on all mobile equipment
+  Pre-start checks : Digital inspection app (Mine Sight / Wenco) mandatory
+  Speed limits     : 30 km/h in pit / 50 km/h on access roads
+
+Emergency response plan:
+  Medical          : First aid stations every 500m, defibrillator on all trucks
+  Fire suppression : Automated Fogmaker on all diesel equipment > 100kW
+  Refuge chambers  : 2x 20-person refuge installed at 150m and 300m depth
+  Evacuation       : 3 escape routes maintained, drilled quarterly
+  Communication    : Leaky feeder radio throughout pit, satellite backup
+
+-- WATER MANAGEMENT --
+Pit inflow        : 380 L/s at full depth (hydrogeological model)
+Dewatering        : 4x submersible pumps (250 L/s each), twin rising mains
+Sump design       : V-notch sump at pit low point, 2,000m3 capacity
+Acid rock drainage: Kinetic testing - 82% of waste rock potentially acid forming
+ARD control       : Blending + encapsulation + lime dosing in settlement pond
+Discharge quality : pH 6-9, TSS < 50 mg/L (DWAF General Limit)
+
+-- DUST & AIR QUALITY --
+Haul road dust    : 6x water carts, 400m spacing, suppression target < 2.5mg/m3
+Blast dust        : Downwind exclusion zone, monitor PM10 at boundary
+Silica (respirable): Baseline audiometry + quarterly air monitoring
+Standard          : ACGIH TLV 0.025 mg/m3 crystalline silica
+
+ANALYSIS COMPLETE - 9 risk flags
+  FLAG 1: Geotechnical investigation incomplete in NW sector - drill 8 more holes
+  FLAG 2: Phreatic surface model uncertainty - install 6 additional piezometers
+  FLAG 3: Blast vibration monitoring required before production blasting
+  FLAG 4: Proximity detection system compatibility check with legacy equipment
+  FLAG 5: ARD management plan requires regulatory approval (6-month lead time)
+  FLAG 6: Haul road design needs formal engineering sign-off (PE stamp)
+  FLAG 7: Emergency response plan update required after equipment fleet changes
+  FLAG 8: Slope radar coverage gap on east wall below 180m RL - add unit
+  FLAG 9: Diesel particulate matter levels at risk of exceeding MSHA limit at depth`
+},
 def:{title:"Defense Systems",badge:"Defense",desc:"Systems engineering for defense platforms: radar, communications, survivability, EW, and mission systems architecture",caps:[{n:"Radar systems",d:"AESA aperture design, waveforms, detection performance"},{n:"Survivability",d:"RCS signatures, armor selection, electronic countermeasures"},{n:"SATCOM & datalinks",d:"Link margins, LPI/LPD waveforms, anti-jam modes"},{n:"Mission computing",d:"DO-178C software, avionics bus architecture, OpenVPX"},{n:"Cybersecurity",d:"NIST RMF, MIL-STD-882, supply chain risk management"},{n:"Systems engineering",d:"MBSE/SysML, DOORS requirements, trade studies"}],ex:["Architect an AESA radar front-end for airborne fire control at X-band","Design a jam-resistant SATCOM terminal with LPI waveforms and 2W EIRP","Create a DO-178C software plan for a flight management system (DAL A)"],m:["24","67","4.1k","8"],resp:"CORVERXIS SUPERMODEL - DEFENSE SYSTEMS ANALYSIS\n\nAESA fire control radar architecture synthesis...\nReferencing MIL-STD-461G, DO-178C, NIST SP 800-53...\n\n-- AESA APERTURE --\nFrequency    : X-band (9.0 to 10.0 GHz operating range)\nT/R modules  : 1024 elements at 0.5 lambda spacing (16.4mm)\nAperture     : ~510mm x 510mm active radiating face\nPeak power   : 50 kW transmit / 10% duty cycle / 5kW average\nBeam steering: +/-60 deg azimuth and elevation (electronic)\nGain         : 36.5 dBi / SLL: -25 dB (Taylor aperture weight)\n\n-- WAVEFORM --\nType         : LFM chirp (linear frequency modulated)\nBandwidth    : 500 MHz bandwidth -> 30cm range resolution\nPRF          : 4 to 8 kHz staggered (velocity ambiguity res.)\nECCM         : Frequency agility and randomized chirp coding\n\n-- DETECTION PERFORMANCE --\nTarget RCS   : 1 m2 (fighter aircraft at broadside aspect)\nDetect range : 185 km @ Pd=0.9, Pfa=1e-6 (0dB SNR margin)\nSmall target : 0.1 m2 (drone) detectable to 70 km range\n\n-- MISSION COMPUTING --\nArchitecture : OpenVPX 6U chassis, 12 available slots\nProcessor    : Intel Xeon D-1700 + Xilinx Ultrascale+ FPGA\nRTOS         : VxWorks 653 (ARINC 653 partitioned)\nData bus     : ARINC 664 Part 7 (AFDX) at 100Mbps\nSoftware     : DO-178C DAL A (fire control) / DAL C (HMI)\n\nARCHITECTURE CONFIRMED - 8 risk flags"}
 };
 
@@ -1748,6 +1977,647 @@ document.addEventListener('DOMContentLoaded', ()=>{
   updateStatsBar();
   showToast('SuperModel v1.0 ready -- Press Ctrl+K to search');
 });
+
+// ============================================================
+// BLUEPRINT DOWNLOAD   generates a styled engineering PDF
+// using canvas-based rendering, pure client-side, no libs
+// ============================================================
+
+function downloadBlueprint() {
+  const output = document.getElementById('outbody').innerText || document.getElementById('outbody').textContent;
+  if (!output || output.length < 50) { showToast('Run an analysis first to generate a blueprint'); return; }
+
+  const domain = D[cur];
+  const timestamp = new Date().toISOString().slice(0,19).replace('T',' ');
+  const docNum = 'CX-SM-' + cur.toUpperCase().slice(0,3) + '-' + Date.now().toString().slice(-6);
+
+  // Build the HTML blueprint document
+  const blueprint = buildBlueprintHTML(output, domain, timestamp, docNum);
+
+  // Download as HTML file (opens perfectly in any browser, printable to PDF)
+  const blob = new Blob([blueprint], {type: 'text/html;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Corverxis-SuperModel-Blueprint-' + cur.toUpperCase() + '-' + Date.now().toString().slice(-6) + '.html';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); document.body.removeChild(a); }, 1000);
+  showToast('Blueprint downloaded - open in browser and Print to PDF');
+}
+
+function buildBlueprintHTML(output, domain, timestamp, docNum) {
+  // Parse output into sections
+  const lines = output.split('\n');
+  const sections = [];
+  let currentSection = null;
+  let headerLine = '';
+
+  lines.forEach((line, idx) => {
+    const trimmed = line.trim();
+    if (idx === 0) { headerLine = trimmed; return; }
+    if (!trimmed) {
+      if (currentSection) currentSection.rows.push({type:'blank'});
+      return;
+    }
+    if (trimmed.startsWith('--') && trimmed.endsWith('--')) {
+      if (currentSection) sections.push(currentSection);
+      currentSection = { title: trimmed.replace(/^--\s*|\s*--$/g,'').trim(), rows: [] };
+    } else if (currentSection) {
+      if (trimmed.startsWith('FLAG')) {
+        currentSection.rows.push({type:'flag', text: trimmed});
+      } else if (trimmed.includes(':') && !trimmed.startsWith('//')) {
+        const colonIdx = trimmed.indexOf(':');
+        const key = trimmed.slice(0, colonIdx).trim();
+        const val = trimmed.slice(colonIdx + 1).trim();
+        if (key.length < 30 && key.length > 0) {
+          currentSection.rows.push({type:'kv', key, val});
+        } else {
+          currentSection.rows.push({type:'text', text: trimmed});
+        }
+      } else if (trimmed.startsWith('DESIGN') || trimmed.startsWith('ANALYSIS') || trimmed.startsWith('ARCHITECTURE') || trimmed.startsWith('VERIFIED') || trimmed.startsWith('COMPLETE')) {
+        currentSection.rows.push({type:'status', text: trimmed});
+      } else {
+        currentSection.rows.push({type:'text', text: trimmed});
+      }
+    }
+  });
+  if (currentSection) sections.push(currentSection);
+
+  // Separate risk flags
+  const riskSection = sections.find(s => s.title.toLowerCase().includes('risk') || s.rows.some(r => r.type === 'flag'));
+  const mainSections = sections.filter(s => s !== riskSection);
+  const allFlags = sections.flatMap(s => s.rows.filter(r => r.type === 'flag'));
+
+  // Build section HTML
+  function renderRows(rows) {
+    return rows.filter(r => r.type !== 'blank').map(row => {
+      if (row.type === 'kv') {
+        return `<tr><td class="key">${row.key}</td><td class="val">${row.val || '&mdash;'}</td></tr>`;
+      }
+      if (row.type === 'flag') {
+        const num = row.text.match(/FLAG\s*(\d+)/i);
+        const rest = row.text.replace(/FLAG\s*\d+\s*:/i,'').trim();
+        return `<tr class="flag-row"><td class="flag-num">FLAG ${num?num[1]:''}</td><td class="flag-text">${rest}</td></tr>`;
+      }
+      if (row.type === 'status') {
+        return `<tr class="status-row"><td colspan="2" class="status-cell">[+] ${row.text}</td></tr>`;
+      }
+      if (row.type === 'text') {
+        return `<tr class="text-row"><td colspan="2" class="text-cell">${row.text}</td></tr>`;
+      }
+      return '';
+    }).join('');
+  }
+
+  const sectionsHTML = mainSections.map(s => `
+    <div class="section">
+      <div class="section-header">${s.title}</div>
+      <table class="data-table">
+        <tbody>${renderRows(s.rows.filter(r => r.type !== 'flag'))}</tbody>
+      </table>
+    </div>`).join('');
+
+  const flagsHTML = allFlags.length > 0 ? `
+    <div class="section risk-section">
+      <div class="section-header risk-header">RISK FLAGS &amp; OPEN ITEMS</div>
+      <table class="data-table">
+        <tbody>${allFlags.map((f,i) => {
+          const rest = f.text.replace(/FLAG\s*\d+\s*:/i,'').replace(/^FLAG\s*\d+\s*/i,'').trim();
+          return `<tr class="flag-row"><td class="flag-num">FLAG ${i+1}</td><td class="flag-text">${rest}</td></tr>`;
+        }).join('')}</tbody>
+      </table>
+    </div>` : '';
+
+  // Stats from domain
+  const stats = domain.m || ['--','--','--','--'];
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SuperModel Blueprint - ${domain.title} - Corverxis Technologies</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --navy: #0d1f3c;
+    --navy2: #112645;
+    --navy3: #163050;
+    --ocean: #00c2e0;
+    --ocean-d: #0096b5;
+    --ocean-l: #33cfea;
+    --amber: #f59e0b;
+    --red: #ef4444;
+    --green: #22c55e;
+    --white: #e8f4f9;
+    --grey: #6fa8bf;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f4f8;
+    color: #1a2e40;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .no-print { display: none !important; }
+    .page { box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; }
+    .blueprint-watermark { opacity: 0.03 !important; }
+  }
+
+  /* PAGE WRAPPER */
+  .page {
+    max-width: 210mm;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* PRINT BUTTON */
+  .print-bar {
+    background: var(--navy);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .print-bar span { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--grey); }
+  .print-btn {
+    background: var(--ocean-d);
+    border: none; border-radius: 5px;
+    padding: 6px 16px;
+    color: white; font-size: 11px; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: background 0.15s;
+  }
+  .print-btn:hover { background: var(--ocean); }
+
+  /* HEADER */
+  .doc-header {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Blueprint grid overlay */
+  .doc-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,194,224,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,224,0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .corverxis-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .brand-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--ocean);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .brand-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    color: var(--grey);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* SVG hex logo */
+  .hex-logo svg { display: block; }
+
+  .doc-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: var(--grey);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  .doc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ocean);
+    font-weight: 500;
+    text-align: right;
+    margin-top: 2px;
+  }
+
+  .header-title-band {
+    background: rgba(0,0,0,0.25);
+    border-top: 1px solid rgba(0,194,224,0.2);
+    border-bottom: 1px solid rgba(0,194,224,0.2);
+    padding: 14px 24px;
+    position: relative; z-index: 1;
+  }
+  .doc-domain-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: var(--ocean);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .doc-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
+  }
+  .doc-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--grey);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* Meta strip */
+  .meta-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-top: 1px solid rgba(0,194,224,0.15);
+    position: relative; z-index: 1;
+  }
+  .meta-cell {
+    padding: 8px 12px;
+    border-right: 1px solid rgba(0,194,224,0.12);
+  }
+  .meta-cell:last-child { border-right: none; }
+  .meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5px;
+    color: var(--grey);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .meta-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    color: var(--ocean);
+    font-weight: 500;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--navy2);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 2px solid var(--ocean);
+  }
+  .stat-cell {
+    padding: 10px 16px;
+    border-right: 1px solid rgba(0,194,224,0.15);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ocean);
+    line-height: 1;
+    text-shadow: 0 0 14px rgba(0,194,224,0.3);
+  }
+  .stat-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5px;
+    color: var(--grey);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  /* BODY */
+  .doc-body {
+    padding: 20px 24px;
+    background: white;
+    position: relative;
+  }
+
+  /* Blueprint watermark */
+  .blueprint-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 72px;
+    font-weight: 700;
+    color: rgba(0,194,224,0.04);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: 8px;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+    break-inside: avoid;
+  }
+
+  .section-header {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--ocean);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background: var(--navy2);
+    color: var(--ocean);
+    border-left: 3px solid var(--ocean);
+    margin-bottom: 0;
+  }
+
+  .risk-header {
+    background: rgba(239,68,68,0.08);
+    border-left-color: var(--red);
+    color: var(--red) !important;
+  }
+
+  /* DATA TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+  }
+
+  .data-table tr {
+    border-bottom: 1px solid #f0f4f8;
+  }
+  .data-table tr:last-child { border-bottom: none; }
+  .data-table tr:hover { background: #f8fbfd; }
+
+  .key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    color: #334e63;
+    font-weight: 500;
+    padding: 4px 10px 4px 12px;
+    width: 28%;
+    vertical-align: top;
+    white-space: nowrap;
+    border-right: 1px solid #e8f0f6;
+  }
+
+  .val {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: #1a2e40;
+    padding: 4px 12px;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .text-cell {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: #1a2e40;
+    padding: 4px 12px;
+    line-height: 1.55;
+  }
+
+  .status-cell {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    color: var(--green);
+    font-weight: 600;
+    padding: 5px 12px;
+    background: rgba(34,197,94,0.05);
+    letter-spacing: 1px;
+  }
+
+  /* FLAGS */
+  .flag-row { background: rgba(239,68,68,0.03); }
+  .flag-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: var(--red);
+    font-weight: 600;
+    padding: 4px 10px 4px 12px;
+    white-space: nowrap;
+    width: 12%;
+    vertical-align: top;
+    border-right: 1px solid rgba(239,68,68,0.15);
+  }
+  .flag-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: #4a2020;
+    padding: 4px 12px;
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    background: var(--navy);
+    padding: 10px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-top: 2px solid var(--ocean);
+    position: relative;
+  }
+  .doc-footer::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,194,224,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,224,0.04) 1px, transparent 1px);
+    background-size: 15px 15px;
+  }
+  .footer-left, .footer-center, .footer-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7px;
+    color: var(--grey);
+    letter-spacing: 1px;
+    position: relative; z-index: 1;
+  }
+  .footer-center { text-align: center; color: var(--ocean); font-weight: 500; }
+  .footer-right { text-align: right; }
+
+  /* DIVIDER */
+  .ocean-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ocean), transparent);
+    opacity: 0.2;
+    margin: 12px 0;
+  }
+
+  /* Two-column layout for sections */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media print {
+    .print-bar { display: none; }
+    .page { margin: 0; max-width: 100%; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<div class="blueprint-watermark">CORVERXIS SUPERMODEL</div>
+
+<div class="print-bar no-print">
+  <span>CORVERXIS SUPERMODEL &nbsp;|&nbsp; ENGINEERING BLUEPRINT &nbsp;|&nbsp; ${docNum}</span>
+  <button class="print-btn" onclick="window.print()">&#128438; Print / Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="header-top">
+      <div class="corverxis-brand">
+        <div class="brand-name">Corverxis Technologies</div>
+        <div class="brand-sub">AI Engineering &amp; Consulting</div>
+        <div style="margin-top:6px;">
+          <svg width="100" height="22" viewBox="0 0 100 22">
+            <polygon points="11,3 18,7 18,15 11,19 4,15 4,7" fill="none" stroke="#00c2e0" stroke-width="1.2"/>
+            <polygon points="11,7 15,9.5 15,14.5 11,17 7,14.5 7,9.5" fill="none" stroke="#00c2e0" stroke-width="0.7" opacity="0.5"/>
+            <circle cx="11" cy="11" r="2.5" fill="#00c2e0"/>
+            <circle cx="11" cy="3" r="1.2" fill="#00c2e0"/>
+            <circle cx="18" cy="7" r="1.2" fill="#00c2e0"/>
+            <circle cx="18" cy="15" r="1.2" fill="#00c2e0"/>
+            <circle cx="11" cy="19" r="1.2" fill="#00c2e0"/>
+            <circle cx="4" cy="15" r="1.2" fill="#00c2e0"/>
+            <circle cx="4" cy="7" r="1.2" fill="#00c2e0"/>
+            <text x="26" y="14" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="1">SUPERMODEL</text>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <div class="doc-type">Engineering Blueprint</div>
+        <div class="doc-num">${docNum}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:7px;color:#334e63;text-align:right;margin-top:3px;">${timestamp} UTC</div>
+      </div>
+    </div>
+
+    <div class="header-title-band">
+      <div class="doc-domain-badge">${domain.badge} &nbsp;/&nbsp; Engineering Analysis</div>
+      <div class="doc-title">${domain.title}</div>
+      <div class="doc-subtitle">${domain.description || 'SuperModel Engineering Intelligence Analysis'}</div>
+    </div>
+
+    <div class="meta-strip">
+      <div class="meta-cell"><div class="meta-label">Document type</div><div class="meta-value">ENG BLUEPRINT</div></div>
+      <div class="meta-cell"><div class="meta-label">Domain</div><div class="meta-value">${domain.badge}</div></div>
+      <div class="meta-cell"><div class="meta-label">Generated by</div><div class="meta-value">SUPERMODEL v1.0</div></div>
+      <div class="meta-cell"><div class="meta-label">Status</div><div class="meta-value">RELEASED</div></div>
+      <div class="meta-cell"><div class="meta-label">Classification</div><div class="meta-value">INTERNAL USE</div></div>
+      <div class="meta-cell"><div class="meta-label">Doc No.</div><div class="meta-value">${docNum}</div></div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-cell"><div class="stat-val">${stats[0]}</div><div class="stat-lbl">Subsystems analyzed</div></div>
+    <div class="stat-cell"><div class="stat-val">${stats[1]}</div><div class="stat-lbl">Standards checked</div></div>
+    <div class="stat-cell"><div class="stat-val">${stats[2]}</div><div class="stat-lbl">Sim iterations</div></div>
+    <div class="stat-cell"><div class="stat-val">${stats[3]}</div><div class="stat-lbl">Risk flags</div></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="doc-body">
+    ${sectionsHTML}
+    ${flagsHTML}
+    <div class="ocean-line"></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:7.5px;color:#6fa8bf;line-height:1.7;padding:8px 0;">
+      This engineering blueprint was generated by Corverxis SuperModel v1.0 General Engineering Intelligence Platform.
+      Output is based on domain-specific physics models, engineering standards, and component libraries. 
+      All specifications must be validated by a qualified engineer before use in any physical system.
+      &copy; ${new Date().getFullYear()} Corverxis Technologies. AI Engineering &amp; Consulting.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-left">CORVERXIS TECHNOLOGIES &nbsp;|&nbsp; AI ENGINEERING &amp; CONSULTING</div>
+    <div class="footer-center">SUPERMODEL v1.0 &nbsp;/&nbsp; ${domain.badge} BLUEPRINT &nbsp;/&nbsp; ${docNum}</div>
+    <div class="footer-right">${timestamp} UTC &nbsp;|&nbsp; PAGE 1 OF 1</div>
+  </div>
+
+</div>
+
+<script>
+  // Auto-trigger print dialog hint
+  document.querySelector('.print-btn').addEventListener('click', () => window.print());
+<\/script>
+</body>
+</html>`;
+}
+
+// Show blueprint button after analysis runs
+const _origRunSM = runSM;
+runSM = async function() {
+  await _origRunSM.apply(this, arguments);
+};
+
+// Override the setTimeout in runSM to also show blueprint button
+// We hook into the output body mutation
+const blueprintObserver = new MutationObserver(() => {
+  const ob = document.getElementById('outbody');
+  const btn = document.getElementById('blueprintBtn');
+  if (!btn) return;
+  const hasContent = ob && ob.innerText && ob.innerText.trim().length > 100;
+  const isGraphic = cur === 'graphic';
+  const isSensorPred = cur === 'sensorpred';
+  if (hasContent && !isGraphic && !isSensorPred) {
+    btn.style.display = 'inline-flex';
+    btn.style.alignItems = 'center';
+    btn.style.gap = '5px';
+  } else {
+    btn.style.display = 'none';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ob = document.getElementById('outbody');
+  if (ob) blueprintObserver.observe(ob, { childList: true, subtree: true, characterData: true });
+});
+
+// Also hook via sel() domain switch   hide button on domain change
+const _selOrig = sel;
+
+
 </script>
 </body>
 </html>
